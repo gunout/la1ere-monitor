@@ -1,0 +1,1125 @@
+{
+  "genere_le": "2026-09-29T08:25:03.816654",
+  "genere_ts": 1790655903,
+  "par_radio": [
+    {
+      "radio": "outremer",
+      "radio_nom": "Outremer 1ère",
+      "nb_diffusions": 24,
+      "nb_artistes": 23,
+      "nb_titres": 24
+    }
+  ],
+  "global": {
+    "volume": {
+      "nb_diffusions": 23,
+      "nb_radios": 1,
+      "nb_artistes": 23,
+      "nb_titres": 23,
+      "heures": 1.03,
+      "duree_moy": 177.0
+    },
+    "top_artistes": [
+      {
+        "artistes": "Blaiz Fayah, Busy Signal & DJ SEBB",
+        "nb_diffusions": 1,
+        "minutes": 4.9
+      },
+      {
+        "artistes": "BASTER",
+        "nb_diffusions": 1,
+        "minutes": 4.5
+      },
+      {
+        "artistes": "Misié Sadik, Jean-Michel Rotin & Julien DALLE",
+        "nb_diffusions": 1,
+        "minutes": 3.8
+      },
+      {
+        "artistes": "Shinedown",
+        "nb_diffusions": 1,
+        "minutes": 3.8
+      },
+      {
+        "artistes": "Jimmy Dévarieux",
+        "nb_diffusions": 1,
+        "minutes": 3.6
+      },
+      {
+        "artistes": "Nohorai Temaiana",
+        "nb_diffusions": 1,
+        "minutes": 3.6
+      },
+      {
+        "artistes": "Jeff Le Nerf",
+        "nb_diffusions": 1,
+        "minutes": 3.5
+      },
+      {
+        "artistes": "Wejdene & Nej",
+        "nb_diffusions": 1,
+        "minutes": 3.5
+      },
+      {
+        "artistes": "Wizkid & Asake",
+        "nb_diffusions": 1,
+        "minutes": 3.2
+      },
+      {
+        "artistes": "Maya Kamaty",
+        "nb_diffusions": 1,
+        "minutes": 3.1
+      },
+      {
+        "artistes": "Shanel Hill, Tabou Combo & DJ Killerz",
+        "nb_diffusions": 1,
+        "minutes": 2.7
+      },
+      {
+        "artistes": "Yamê & Adekunle Gold",
+        "nb_diffusions": 1,
+        "minutes": 2.7
+      },
+      {
+        "artistes": "Gäelle",
+        "nb_diffusions": 1,
+        "minutes": 2.5
+      },
+      {
+        "artistes": "Maureen, COLORS",
+        "nb_diffusions": 1,
+        "minutes": 2.5
+      },
+      {
+        "artistes": "Bad Bunny",
+        "nb_diffusions": 1,
+        "minutes": 2.4
+      },
+      {
+        "artistes": "BEAUZ, JKRS & gritney",
+        "nb_diffusions": 1,
+        "minutes": 2.3
+      },
+      {
+        "artistes": "Ben Bada Boom",
+        "nb_diffusions": 1,
+        "minutes": 2.2
+      },
+      {
+        "artistes": "T-Matt",
+        "nb_diffusions": 1,
+        "minutes": 2.1
+      },
+      {
+        "artistes": "Young Chang Mc",
+        "nb_diffusions": 1,
+        "minutes": 2.1
+      },
+      {
+        "artistes": "Lucky lukee",
+        "nb_diffusions": 1,
+        "minutes": 2.0
+      }
+    ],
+    "top_titres": [
+      {
+        "artistes": "BASTER",
+        "titre": "MON LIBERTé vers. 2007",
+        "nb_diffusions": 1,
+        "minutes": 4.5
+      },
+      {
+        "artistes": "BEAUZ, JKRS & gritney",
+        "titre": "Loco",
+        "nb_diffusions": 1,
+        "minutes": 2.3
+      },
+      {
+        "artistes": "Bad Bunny",
+        "titre": "ALAMBRE PúA",
+        "nb_diffusions": 1,
+        "minutes": 2.4
+      },
+      {
+        "artistes": "Ben Bada Boom",
+        "titre": "Caipi",
+        "nb_diffusions": 1,
+        "minutes": 2.2
+      },
+      {
+        "artistes": "Blaiz Fayah, Busy Signal & DJ SEBB",
+        "titre": "Take It Easy (feat. Vj Lou)",
+        "nb_diffusions": 1,
+        "minutes": 4.9
+      },
+      {
+        "artistes": "Gäelle",
+        "titre": "boss up",
+        "nb_diffusions": 1,
+        "minutes": 2.5
+      },
+      {
+        "artistes": "Jeff Le Nerf",
+        "titre": "Un p'tit smile (feat. Kalash l'afro)",
+        "nb_diffusions": 1,
+        "minutes": 3.5
+      },
+      {
+        "artistes": "Jimmy Dévarieux",
+        "titre": "Elle a tout",
+        "nb_diffusions": 1,
+        "minutes": 3.6
+      },
+      {
+        "artistes": "Lucky lukee",
+        "titre": "An Sou (feat. Miimii & Le Cus)",
+        "nb_diffusions": 1,
+        "minutes": 2.0
+      },
+      {
+        "artistes": "Maureen, COLORS",
+        "titre": "Bend Your Back - (carnaval)",
+        "nb_diffusions": 1,
+        "minutes": 2.5
+      },
+      {
+        "artistes": "Maya Kamaty",
+        "titre": "TOURNÉ VIRÉ",
+        "nb_diffusions": 1,
+        "minutes": 3.1
+      },
+      {
+        "artistes": "Mike Kizz",
+        "titre": "Gyal Anthem",
+        "nb_diffusions": 1,
+        "minutes": 0.9
+      },
+      {
+        "artistes": "Misié Sadik, Jean-Michel Rotin & Julien DALLE",
+        "titre": "VINI ÈVÈ NOU WISH",
+        "nb_diffusions": 1,
+        "minutes": 3.8
+      },
+      {
+        "artistes": "Nohorai Temaiana",
+        "titre": "Te rere a pepe",
+        "nb_diffusions": 1,
+        "minutes": 3.6
+      },
+      {
+        "artistes": "Shanel Hill, Tabou Combo & DJ Killerz",
+        "titre": "Tu as volé",
+        "nb_diffusions": 1,
+        "minutes": 2.7
+      },
+      {
+        "artistes": "Shinedown",
+        "titre": "special",
+        "nb_diffusions": 1,
+        "minutes": 3.8
+      },
+      {
+        "artistes": "Stony & Kalipsxau",
+        "titre": "Souvenirs",
+        "nb_diffusions": 1,
+        "minutes": null
+      },
+      {
+        "artistes": "T-Matt",
+        "titre": "Prime",
+        "nb_diffusions": 1,
+        "minutes": 2.1
+      },
+      {
+        "artistes": "Tiwony & Dexterman",
+        "titre": "Gwada Paradise",
+        "nb_diffusions": 1,
+        "minutes": null
+      },
+      {
+        "artistes": "Wejdene & Nej",
+        "titre": "Baby Boo",
+        "nb_diffusions": 1,
+        "minutes": 3.5
+      }
+    ],
+    "heures": [
+      {
+        "heure": 7,
+        "nb": 15
+      },
+      {
+        "heure": 8,
+        "nb": 9
+      }
+    ],
+    "jours": [
+      {
+        "date": "2026-09-29",
+        "nb": 24
+      }
+    ],
+    "semaine": [
+      {
+        "jour": "Mardi",
+        "nb": 24
+      }
+    ],
+    "recurrents": [],
+    "titres_recurrents": [],
+    "diversifies": [],
+    "annees": [
+      {
+        "annee": 2026,
+        "nb_diffusions": 7
+      },
+      {
+        "annee": 2025,
+        "nb_diffusions": 4
+      },
+      {
+        "annee": 2024,
+        "nb_diffusions": 4
+      },
+      {
+        "annee": 2023,
+        "nb_diffusions": 3
+      },
+      {
+        "annee": 2022,
+        "nb_diffusions": 1
+      },
+      {
+        "annee": 2021,
+        "nb_diffusions": 1
+      },
+      {
+        "annee": 2018,
+        "nb_diffusions": 1
+      }
+    ],
+    "explicit": [
+      {
+        "type_contenu": "Clean",
+        "nb": 1
+      }
+    ],
+    "albums": [
+      {
+        "album": "boss up - EP",
+        "artistes": "Gäelle",
+        "nb": 1
+      },
+      {
+        "album": "WISH",
+        "artistes": "Misié Sadik, Jean-Michel Rotin & Julien DALLE",
+        "nb": 1
+      },
+      {
+        "album": "Souvenirs - Single",
+        "artistes": "Stony & Kalipsxau",
+        "nb": 1
+      },
+      {
+        "album": "Raining",
+        "artistes": "Mike Kizz",
+        "nb": 1
+      },
+      {
+        "album": "REAL, Vol. 1 - EP",
+        "artistes": "Wizkid & Asake",
+        "nb": 1
+      },
+      {
+        "album": "Prime - Single",
+        "artistes": "T-Matt",
+        "nb": 1
+      },
+      {
+        "album": "On my mind - Single",
+        "artistes": "Yamê & Adekunle Gold",
+        "nb": 1
+      },
+      {
+        "album": "Mi",
+        "artistes": "Young Chang Mc",
+        "nb": 1
+      },
+      {
+        "album": "Mad Ting 3",
+        "artistes": "Blaiz Fayah, Busy Signal & DJ SEBB",
+        "nb": 1
+      },
+      {
+        "album": "Loco - Single",
+        "artistes": "BEAUZ, JKRS & gritney",
+        "nb": 1
+      },
+      {
+        "album": "Gwada Paradise - Single",
+        "artistes": "Tiwony & Dexterman",
+        "nb": 1
+      },
+      {
+        "album": "Glow Up",
+        "artistes": "Wejdene & Nej",
+        "nb": 1
+      },
+      {
+        "album": "Elle a tout - Single",
+        "artistes": "Jimmy Dévarieux",
+        "nb": 1
+      },
+      {
+        "album": "Dark Green Tape",
+        "artistes": "Jeff Le Nerf",
+        "nb": 1
+      },
+      {
+        "album": "DÉMO D'AMOUR",
+        "artistes": "Shanel Hill, Tabou Combo & DJ Killerz",
+        "nb": 1
+      },
+      {
+        "album": "DANN TOURNAN - EP",
+        "artistes": "Maya Kamaty",
+        "nb": 1
+      },
+      {
+        "album": "Chillhop Essentials Summer 2021",
+        "artistes": "Ben Bada Boom",
+        "nb": 1
+      },
+      {
+        "album": "Arata'i",
+        "artistes": "Nohorai Temaiana",
+        "nb": 1
+      },
+      {
+        "album": "An Sou (feat. Miimii & Le Cus) - Single",
+        "artistes": "Lucky lukee",
+        "nb": 1
+      },
+      {
+        "album": "ATTENTION ATTENTION",
+        "artistes": "Shinedown",
+        "nb": 1
+      }
+    ],
+    "derniers_morceaux": [
+      {
+        "titre": "Gwada Paradise",
+        "artistes": "Tiwony & Dexterman",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c6/23/af/c623af4b-8e35-8a18-9936-1e6d54e3bbd4/cover.jpg/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2d/4f/db/2d4fdbf1-bfa1-5467-8951-1dc4795f42d4/mzaf_3317455339572903486.plus.aac.p.m4a",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": "Gwada Paradise - Single",
+        "annee": 2026,
+        "start_ts": 1790655793,
+        "end_ts": null,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "Souvenirs",
+        "artistes": "Stony & Kalipsxau",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8e/ee/6d/8eee6d47-8403-b343-8bf5-da2042cebb5a/cover.jpg/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/19/6a/e9196a30-9c36-ddb5-4fb4-839cc4a781c9/mzaf_12636506427902551227.plus.aac.p.m4a",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": "Souvenirs - Single",
+        "annee": 2024,
+        "start_ts": 1790655587,
+        "end_ts": null,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "Gyal Anthem",
+        "artistes": "Mike Kizz",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/80/8f/58/808f58cb-8ac9-4ec6-24ea-2fd36670cd9c/28907.jpg/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/40/af/f3/40aff344-9bbe-1a32-61fd-59a0194ea50b/mzaf_4890768763857580524.plus.aac.p.m4a",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": "Raining",
+        "annee": 2026,
+        "start_ts": 1790655469,
+        "end_ts": 1790655522,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "Caipi",
+        "artistes": "Ben Bada Boom",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/ba/af/92/baaf92a6-4cfc-6d6c-1612-2b1bf9a6b03d/745051300241.png/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/92/24/5f/92245f54-49da-af6d-de26-ef527c381c32/mzaf_9331570041949452201.plus.aac.p.m4a",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": "Chillhop Essentials Summer 2021",
+        "annee": 2021,
+        "start_ts": 1790655335,
+        "end_ts": 1790655469,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "Tu as volé",
+        "artistes": "Shanel Hill, Tabou Combo & DJ Killerz",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7e/bb/3c/7ebb3cb1-7883-03eb-53bd-9744ae1582da/cover.jpg/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9b/77/fd/9b77fd79-648d-b588-1aad-193a790d55ac/mzaf_6094399359525323260.plus.aac.p.m4a",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": "DÉMO D'AMOUR",
+        "annee": 2026,
+        "start_ts": 1790655171,
+        "end_ts": 1790655335,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "boss up",
+        "artistes": "Gäelle",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/09/e3/ee/09e3eef8-6be8-a280-d481-ad2a3186d8c1/1295985.jpg/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f2/ad/68/f2ad685d-0eff-66e0-f200-080b74a7cb40/mzaf_6379676003147955892.plus.aac.p.m4a",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": "boss up - EP",
+        "annee": 2026,
+        "start_ts": 1790655023,
+        "end_ts": 1790655171,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "ALAMBRE PúA",
+        "artistes": "Bad Bunny",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/c2/3c/22/c23c228a-fc2a-0edc-f76e-72ffd63758ab/dj.ricfppkn.jpg/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/a9/cf/06/a9cf0604-2868-cac4-ac78-15fe3a1d2c79/mzvf_15150195392092279570.1920w.h264lc.U.p.m4v",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": null,
+        "annee": 2025,
+        "start_ts": 1790654879,
+        "end_ts": 1790655023,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "Elle a tout",
+        "artistes": "Jimmy Dévarieux",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/88/dc/4d/88dc4d2c-e362-02e1-0819-7448413ae82e/859774035783_cover.jpg/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/61/fd/ef/61fdefc1-4741-5d9d-7fc6-0ef722d3b9db/mzaf_17631663718894606602.plus.aac.p.m4a",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": "Elle a tout - Single",
+        "annee": 2023,
+        "start_ts": 1790654661,
+        "end_ts": 1790654879,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "Jogodo",
+        "artistes": "Wizkid & Asake",
+        "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f0/d9/fb/f0d9fbd9-4fb2-0b9f-4178-97c2b865f22d/199316437584_cover.jpg/600x600bb.jpg",
+        "cover_uri": null,
+        "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/82/42/7a/82427aaa-0012-28f2-a1d7-f4dc58b7aa16/mzaf_8312211163811258783.plus.aac.p.m4a",
+        "date": "2026-09-29",
+        "heure": 8,
+        "album": "REAL, Vol. 1 - EP",
+        "annee": 2026,
+        "start_ts": 1790654467,
+        "end_ts": 1790654661,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      },
+      {
+        "titre": "MON LIBERTé vers. 2007",
+        "artistes": "BASTER",
+        "cover_deezer": null,
+        "cover_uri": null,
+        "preview_mp3": null,
+        "date": "2026-09-29",
+        "heure": 7,
+        "album": null,
+        "annee": null,
+        "start_ts": 1790654198,
+        "end_ts": 1790654467,
+        "radio": "outremer",
+        "radio_nom": "Outremer 1ère"
+      }
+    ]
+  },
+  "par_radio_data": {
+    "outremer": {
+      "volume": {
+        "nb_diffusions": 23,
+        "nb_radios": 1,
+        "nb_artistes": 23,
+        "nb_titres": 23,
+        "heures": 1.03,
+        "duree_moy": 177.0
+      },
+      "top_artistes": [
+        {
+          "artistes": "Blaiz Fayah, Busy Signal & DJ SEBB",
+          "nb_diffusions": 1,
+          "minutes": 4.9
+        },
+        {
+          "artistes": "BASTER",
+          "nb_diffusions": 1,
+          "minutes": 4.5
+        },
+        {
+          "artistes": "Shinedown",
+          "nb_diffusions": 1,
+          "minutes": 3.8
+        },
+        {
+          "artistes": "Misié Sadik, Jean-Michel Rotin & Julien DALLE",
+          "nb_diffusions": 1,
+          "minutes": 3.8
+        },
+        {
+          "artistes": "Nohorai Temaiana",
+          "nb_diffusions": 1,
+          "minutes": 3.6
+        },
+        {
+          "artistes": "Jimmy Dévarieux",
+          "nb_diffusions": 1,
+          "minutes": 3.6
+        },
+        {
+          "artistes": "Wejdene & Nej",
+          "nb_diffusions": 1,
+          "minutes": 3.5
+        },
+        {
+          "artistes": "Jeff Le Nerf",
+          "nb_diffusions": 1,
+          "minutes": 3.5
+        },
+        {
+          "artistes": "Wizkid & Asake",
+          "nb_diffusions": 1,
+          "minutes": 3.2
+        },
+        {
+          "artistes": "Maya Kamaty",
+          "nb_diffusions": 1,
+          "minutes": 3.1
+        },
+        {
+          "artistes": "Yamê & Adekunle Gold",
+          "nb_diffusions": 1,
+          "minutes": 2.7
+        },
+        {
+          "artistes": "Shanel Hill, Tabou Combo & DJ Killerz",
+          "nb_diffusions": 1,
+          "minutes": 2.7
+        },
+        {
+          "artistes": "Maureen, COLORS",
+          "nb_diffusions": 1,
+          "minutes": 2.5
+        },
+        {
+          "artistes": "Gäelle",
+          "nb_diffusions": 1,
+          "minutes": 2.5
+        },
+        {
+          "artistes": "Bad Bunny",
+          "nb_diffusions": 1,
+          "minutes": 2.4
+        },
+        {
+          "artistes": "BEAUZ, JKRS & gritney",
+          "nb_diffusions": 1,
+          "minutes": 2.3
+        },
+        {
+          "artistes": "Ben Bada Boom",
+          "nb_diffusions": 1,
+          "minutes": 2.2
+        },
+        {
+          "artistes": "Young Chang Mc",
+          "nb_diffusions": 1,
+          "minutes": 2.1
+        },
+        {
+          "artistes": "T-Matt",
+          "nb_diffusions": 1,
+          "minutes": 2.1
+        },
+        {
+          "artistes": "Lucky lukee",
+          "nb_diffusions": 1,
+          "minutes": 2.0
+        }
+      ],
+      "top_titres": [
+        {
+          "artistes": "BASTER",
+          "titre": "MON LIBERTé vers. 2007",
+          "nb_diffusions": 1,
+          "minutes": 4.5
+        },
+        {
+          "artistes": "BEAUZ, JKRS & gritney",
+          "titre": "Loco",
+          "nb_diffusions": 1,
+          "minutes": 2.3
+        },
+        {
+          "artistes": "Bad Bunny",
+          "titre": "ALAMBRE PúA",
+          "nb_diffusions": 1,
+          "minutes": 2.4
+        },
+        {
+          "artistes": "Ben Bada Boom",
+          "titre": "Caipi",
+          "nb_diffusions": 1,
+          "minutes": 2.2
+        },
+        {
+          "artistes": "Blaiz Fayah, Busy Signal & DJ SEBB",
+          "titre": "Take It Easy (feat. Vj Lou)",
+          "nb_diffusions": 1,
+          "minutes": 4.9
+        },
+        {
+          "artistes": "Gäelle",
+          "titre": "boss up",
+          "nb_diffusions": 1,
+          "minutes": 2.5
+        },
+        {
+          "artistes": "Jeff Le Nerf",
+          "titre": "Un p'tit smile (feat. Kalash l'afro)",
+          "nb_diffusions": 1,
+          "minutes": 3.5
+        },
+        {
+          "artistes": "Jimmy Dévarieux",
+          "titre": "Elle a tout",
+          "nb_diffusions": 1,
+          "minutes": 3.6
+        },
+        {
+          "artistes": "Lucky lukee",
+          "titre": "An Sou (feat. Miimii & Le Cus)",
+          "nb_diffusions": 1,
+          "minutes": 2.0
+        },
+        {
+          "artistes": "Maureen, COLORS",
+          "titre": "Bend Your Back - (carnaval)",
+          "nb_diffusions": 1,
+          "minutes": 2.5
+        },
+        {
+          "artistes": "Maya Kamaty",
+          "titre": "TOURNÉ VIRÉ",
+          "nb_diffusions": 1,
+          "minutes": 3.1
+        },
+        {
+          "artistes": "Mike Kizz",
+          "titre": "Gyal Anthem",
+          "nb_diffusions": 1,
+          "minutes": 0.9
+        },
+        {
+          "artistes": "Misié Sadik, Jean-Michel Rotin & Julien DALLE",
+          "titre": "VINI ÈVÈ NOU WISH",
+          "nb_diffusions": 1,
+          "minutes": 3.8
+        },
+        {
+          "artistes": "Nohorai Temaiana",
+          "titre": "Te rere a pepe",
+          "nb_diffusions": 1,
+          "minutes": 3.6
+        },
+        {
+          "artistes": "Shanel Hill, Tabou Combo & DJ Killerz",
+          "titre": "Tu as volé",
+          "nb_diffusions": 1,
+          "minutes": 2.7
+        },
+        {
+          "artistes": "Shinedown",
+          "titre": "special",
+          "nb_diffusions": 1,
+          "minutes": 3.8
+        },
+        {
+          "artistes": "Stony & Kalipsxau",
+          "titre": "Souvenirs",
+          "nb_diffusions": 1,
+          "minutes": null
+        },
+        {
+          "artistes": "T-Matt",
+          "titre": "Prime",
+          "nb_diffusions": 1,
+          "minutes": 2.1
+        },
+        {
+          "artistes": "Tiwony & Dexterman",
+          "titre": "Gwada Paradise",
+          "nb_diffusions": 1,
+          "minutes": null
+        },
+        {
+          "artistes": "Wejdene & Nej",
+          "titre": "Baby Boo",
+          "nb_diffusions": 1,
+          "minutes": 3.5
+        }
+      ],
+      "heures": [
+        {
+          "heure": 7,
+          "nb": 15
+        },
+        {
+          "heure": 8,
+          "nb": 9
+        }
+      ],
+      "jours": [
+        {
+          "date": "2026-09-29",
+          "nb": 24
+        }
+      ],
+      "semaine": [
+        {
+          "jour": "Mardi",
+          "nb": 24
+        }
+      ],
+      "recurrents": [],
+      "titres_recurrents": [],
+      "diversifies": [],
+      "annees": [
+        {
+          "annee": 2026,
+          "nb_diffusions": 7
+        },
+        {
+          "annee": 2025,
+          "nb_diffusions": 4
+        },
+        {
+          "annee": 2024,
+          "nb_diffusions": 4
+        },
+        {
+          "annee": 2023,
+          "nb_diffusions": 3
+        },
+        {
+          "annee": 2022,
+          "nb_diffusions": 1
+        },
+        {
+          "annee": 2021,
+          "nb_diffusions": 1
+        },
+        {
+          "annee": 2018,
+          "nb_diffusions": 1
+        }
+      ],
+      "explicit": [
+        {
+          "type_contenu": "Clean",
+          "nb": 1
+        }
+      ],
+      "albums": [
+        {
+          "album": "boss up - EP",
+          "artistes": "Gäelle",
+          "nb": 1
+        },
+        {
+          "album": "WISH",
+          "artistes": "Misié Sadik, Jean-Michel Rotin & Julien DALLE",
+          "nb": 1
+        },
+        {
+          "album": "Souvenirs - Single",
+          "artistes": "Stony & Kalipsxau",
+          "nb": 1
+        },
+        {
+          "album": "Raining",
+          "artistes": "Mike Kizz",
+          "nb": 1
+        },
+        {
+          "album": "REAL, Vol. 1 - EP",
+          "artistes": "Wizkid & Asake",
+          "nb": 1
+        },
+        {
+          "album": "Prime - Single",
+          "artistes": "T-Matt",
+          "nb": 1
+        },
+        {
+          "album": "On my mind - Single",
+          "artistes": "Yamê & Adekunle Gold",
+          "nb": 1
+        },
+        {
+          "album": "Mi",
+          "artistes": "Young Chang Mc",
+          "nb": 1
+        },
+        {
+          "album": "Mad Ting 3",
+          "artistes": "Blaiz Fayah, Busy Signal & DJ SEBB",
+          "nb": 1
+        },
+        {
+          "album": "Loco - Single",
+          "artistes": "BEAUZ, JKRS & gritney",
+          "nb": 1
+        },
+        {
+          "album": "Gwada Paradise - Single",
+          "artistes": "Tiwony & Dexterman",
+          "nb": 1
+        },
+        {
+          "album": "Glow Up",
+          "artistes": "Wejdene & Nej",
+          "nb": 1
+        },
+        {
+          "album": "Elle a tout - Single",
+          "artistes": "Jimmy Dévarieux",
+          "nb": 1
+        },
+        {
+          "album": "Dark Green Tape",
+          "artistes": "Jeff Le Nerf",
+          "nb": 1
+        },
+        {
+          "album": "DÉMO D'AMOUR",
+          "artistes": "Shanel Hill, Tabou Combo & DJ Killerz",
+          "nb": 1
+        },
+        {
+          "album": "DANN TOURNAN - EP",
+          "artistes": "Maya Kamaty",
+          "nb": 1
+        },
+        {
+          "album": "Chillhop Essentials Summer 2021",
+          "artistes": "Ben Bada Boom",
+          "nb": 1
+        },
+        {
+          "album": "Arata'i",
+          "artistes": "Nohorai Temaiana",
+          "nb": 1
+        },
+        {
+          "album": "An Sou (feat. Miimii & Le Cus) - Single",
+          "artistes": "Lucky lukee",
+          "nb": 1
+        },
+        {
+          "album": "ATTENTION ATTENTION",
+          "artistes": "Shinedown",
+          "nb": 1
+        }
+      ],
+      "derniers_morceaux": [
+        {
+          "titre": "Gwada Paradise",
+          "artistes": "Tiwony & Dexterman",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c6/23/af/c623af4b-8e35-8a18-9936-1e6d54e3bbd4/cover.jpg/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2d/4f/db/2d4fdbf1-bfa1-5467-8951-1dc4795f42d4/mzaf_3317455339572903486.plus.aac.p.m4a",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": "Gwada Paradise - Single",
+          "annee": 2026,
+          "start_ts": 1790655793,
+          "end_ts": null,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "Souvenirs",
+          "artistes": "Stony & Kalipsxau",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8e/ee/6d/8eee6d47-8403-b343-8bf5-da2042cebb5a/cover.jpg/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/19/6a/e9196a30-9c36-ddb5-4fb4-839cc4a781c9/mzaf_12636506427902551227.plus.aac.p.m4a",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": "Souvenirs - Single",
+          "annee": 2024,
+          "start_ts": 1790655587,
+          "end_ts": null,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "Gyal Anthem",
+          "artistes": "Mike Kizz",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/80/8f/58/808f58cb-8ac9-4ec6-24ea-2fd36670cd9c/28907.jpg/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/40/af/f3/40aff344-9bbe-1a32-61fd-59a0194ea50b/mzaf_4890768763857580524.plus.aac.p.m4a",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": "Raining",
+          "annee": 2026,
+          "start_ts": 1790655469,
+          "end_ts": 1790655522,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "Caipi",
+          "artistes": "Ben Bada Boom",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/ba/af/92/baaf92a6-4cfc-6d6c-1612-2b1bf9a6b03d/745051300241.png/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview124/v4/92/24/5f/92245f54-49da-af6d-de26-ef527c381c32/mzaf_9331570041949452201.plus.aac.p.m4a",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": "Chillhop Essentials Summer 2021",
+          "annee": 2021,
+          "start_ts": 1790655335,
+          "end_ts": 1790655469,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "Tu as volé",
+          "artistes": "Shanel Hill, Tabou Combo & DJ Killerz",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7e/bb/3c/7ebb3cb1-7883-03eb-53bd-9744ae1582da/cover.jpg/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9b/77/fd/9b77fd79-648d-b588-1aad-193a790d55ac/mzaf_6094399359525323260.plus.aac.p.m4a",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": "DÉMO D'AMOUR",
+          "annee": 2026,
+          "start_ts": 1790655171,
+          "end_ts": 1790655335,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "boss up",
+          "artistes": "Gäelle",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/09/e3/ee/09e3eef8-6be8-a280-d481-ad2a3186d8c1/1295985.jpg/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f2/ad/68/f2ad685d-0eff-66e0-f200-080b74a7cb40/mzaf_6379676003147955892.plus.aac.p.m4a",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": "boss up - EP",
+          "annee": 2026,
+          "start_ts": 1790655023,
+          "end_ts": 1790655171,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "ALAMBRE PúA",
+          "artistes": "Bad Bunny",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/c2/3c/22/c23c228a-fc2a-0edc-f76e-72ffd63758ab/dj.ricfppkn.jpg/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://video-ssl.itunes.apple.com/itunes-assets/Video211/v4/a9/cf/06/a9cf0604-2868-cac4-ac78-15fe3a1d2c79/mzvf_15150195392092279570.1920w.h264lc.U.p.m4v",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": null,
+          "annee": 2025,
+          "start_ts": 1790654879,
+          "end_ts": 1790655023,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "Elle a tout",
+          "artistes": "Jimmy Dévarieux",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/88/dc/4d/88dc4d2c-e362-02e1-0819-7448413ae82e/859774035783_cover.jpg/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/61/fd/ef/61fdefc1-4741-5d9d-7fc6-0ef722d3b9db/mzaf_17631663718894606602.plus.aac.p.m4a",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": "Elle a tout - Single",
+          "annee": 2023,
+          "start_ts": 1790654661,
+          "end_ts": 1790654879,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "Jogodo",
+          "artistes": "Wizkid & Asake",
+          "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f0/d9/fb/f0d9fbd9-4fb2-0b9f-4178-97c2b865f22d/199316437584_cover.jpg/600x600bb.jpg",
+          "cover_uri": null,
+          "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/82/42/7a/82427aaa-0012-28f2-a1d7-f4dc58b7aa16/mzaf_8312211163811258783.plus.aac.p.m4a",
+          "date": "2026-09-29",
+          "heure": 8,
+          "album": "REAL, Vol. 1 - EP",
+          "annee": 2026,
+          "start_ts": 1790654467,
+          "end_ts": 1790654661,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        },
+        {
+          "titre": "MON LIBERTé vers. 2007",
+          "artistes": "BASTER",
+          "cover_deezer": null,
+          "cover_uri": null,
+          "preview_mp3": null,
+          "date": "2026-09-29",
+          "heure": 7,
+          "album": null,
+          "annee": null,
+          "start_ts": 1790654198,
+          "end_ts": 1790654467,
+          "radio": "outremer",
+          "radio_nom": "Outremer 1ère"
+        }
+      ]
+    }
+  },
+  "derniers_par_radio": {
+    "outremer": {
+      "titre": "Gwada Paradise",
+      "artistes": "Tiwony & Dexterman",
+      "cover_deezer": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c6/23/af/c623af4b-8e35-8a18-9936-1e6d54e3bbd4/cover.jpg/600x600bb.jpg",
+      "cover_uri": null,
+      "preview_mp3": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2d/4f/db/2d4fdbf1-bfa1-5467-8951-1dc4795f42d4/mzaf_3317455339572903486.plus.aac.p.m4a",
+      "start_ts": 1790655793,
+      "end_ts": null,
+      "radio_nom": "Outremer 1ère"
+    }
+  }
+}

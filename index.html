@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La 1ère — Monitor</title>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+<style>
+  :root {
+    --ftv-blue: #003da5;
+    --ftv-blue-2: #0055d4;
+    --ftv-red: #e60023;
+    --ftv-yellow: #ffcc00;
+    --ftv-green: #00a86b;
+    --ftv-dark: #0a0a0a;
+    --ftv-gray: #f5f5f5;
+    --ftv-border: #e0e0e0;
+    --ftv-text: #111;
+    --ftv-muted: #666;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #fff; color: var(--ftv-text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh; font-size: 14px;
+  }
+
+  /* Topbar */
+  .topbar {
+    background: var(--ftv-dark); color: #fff;
+    padding: 8px 24px; display: flex; align-items: center;
+    justify-content: space-between; font-size: 11px;
+    font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topbar .live { display: inline-flex; align-items: center; gap: 8px; }
+  .topbar .live::before {
+    content: ''; width: 8px; height: 8px;
+    background: var(--ftv-red); border-radius: 50%;
+    animation: blink 1.5s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .topbar .meta { color: #999; font-size: 10px; }
+  .topbar .actions { display: flex; align-items: center; gap: 12px; }
+  .refresh-btn {
+    background: transparent; border: 1px solid #444; color: #fff;
+    padding: 4px 12px; font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .refresh-btn:hover { background: var(--ftv-red); border-color: var(--ftv-red); }
+  .refresh-btn.spin { animation: rotate 0.6s linear; }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+
+  /* Header La 1ère */
+  .header {
+    padding: 28px 24px;
+    background: linear-gradient(135deg, #003da5 0%, #00a86b 50%, #ffcc00 100%);
+    color: #fff;
+    display: flex; align-items: center; gap: 20px;
+    position: relative; overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .logo {
+    font-size: 42px; font-weight: 900; letter-spacing: -2px;
+    color: #fff; font-family: 'Arial Black', Arial, sans-serif;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+    position: relative; z-index: 1;
+  }
+  .logo span { color: var(--ftv-yellow); }
+  .logo-sub {
+    color: rgba(255,255,255,0.85); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 4px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    padding-left: 20px; font-weight: 700;
+    position: relative; z-index: 1;
+  }
+
+  /* Onglets radios */
+  .radios-tabs {
+    background: var(--ftv-dark); padding: 0 24px;
+    display: flex; overflow-x: auto;
+    position: sticky; top: 32px; z-index: 99;
+    scrollbar-width: thin;
+  }
+  .radios-tabs::-webkit-scrollbar { height: 4px; }
+  .radios-tabs::-webkit-scrollbar-thumb { background: #444; }
+  .radio-tab {
+    color: #fff; background: transparent; border: none;
+    padding: 14px 20px; font-weight: 700;
+    text-transform: uppercase; font-size: 11px;
+    letter-spacing: 1.5px; white-space: nowrap;
+    border-bottom: 3px solid transparent; cursor: pointer;
+    transition: all 0.15s; font-family: inherit;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .radio-tab:hover { background: rgba(255,255,255,0.08); }
+  .radio-tab.active {
+    background: var(--ftv-blue); border-bottom-color: var(--ftv-yellow);
+    color: #fff;
+  }
+  .radio-tab .nb {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    padding: 2px 7px; border-radius: 10px;
+    font-size: 9px; font-weight: 900;
+  }
+  .radio-tab.active .nb { background: var(--ftv-yellow); color: var(--ftv-dark); }
+
+  /* État */
+  #etat {
+    background: var(--ftv-gray); border-left: 4px solid var(--ftv-blue);
+    padding: 10px 16px; font-size: 12px; margin: 16px 24px 0;
+    color: var(--ftv-muted); text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 600;
+  }
+  #etat.erreur { background: #ffe5e9; color: var(--ftv-red); }
+
+  /* On Air */
+  .on-air {
+    margin: 16px 24px 24px;
+    background: linear-gradient(135deg, #fff 0%, #f5faff 100%);
+    border: 1px solid var(--ftv-border);
+    border-left: 6px solid var(--ftv-blue);
+    padding: 20px; display: flex; align-items: center;
+    gap: 20px; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .on-air::after {
+    content: '';
+    position: absolute;
+    right: -20px; top: -20px;
+    width: 100px; height: 100px;
+    background: radial-gradient(circle, rgba(0,61,165,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .on-air.stale { border-left-color: var(--ftv-muted); opacity: 0.7; }
+  .on-air .cover {
+    width: 100px; height: 100px; background: var(--ftv-gray);
+    background-size: cover; background-position: center;
+    flex-shrink: 0; border: 1px solid var(--ftv-border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .on-air .info { flex: 1; min-width: 0; position: relative; z-index: 1; }
+  .on-air .label {
+    color: var(--ftv-blue); font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 3px;
+    margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+  }
+  .on-air .label::before {
+    content: ''; width: 8px; height: 8px;
+    background: var(--ftv-blue); border-radius: 50%;
+    animation: blink 1.5s infinite;
+  }
+  .on-air.stale .label { color: var(--ftv-muted); }
+  .on-air.stale .label::before { background: var(--ftv-muted); animation: none; }
+  .on-air .radio-badge {
+    display: inline-block;
+    background: var(--ftv-blue); color: #fff;
+    padding: 3px 10px; font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+  .on-air .titre {
+    font-size: 26px; font-weight: 900; color: var(--ftv-dark);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    text-transform: uppercase; letter-spacing: -0.5px;
+  }
+  .on-air .artiste {
+    color: var(--ftv-blue); font-size: 15px;
+    margin-top: 4px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .on-air .extrait {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--ftv-green); color: #fff; font-size: 11px;
+    margin-top: 12px; padding: 6px 12px; text-decoration: none;
+    text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800;
+    transition: all 0.2s;
+  }
+  .on-air .extrait:hover { background: #008855; }
+  .on-air .countdown { text-align: right; font-variant-numeric: tabular-nums; position: relative; z-index: 1; }
+  .on-air .countdown-label {
+    color: var(--ftv-muted); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 2px; font-weight: 700;
+  }
+  .on-air .countdown-value {
+    font-size: 38px; font-weight: 900; color: var(--ftv-blue);
+    margin-top: 4px;
+  }
+  .on-air.stale .countdown-value { color: var(--ftv-muted); }
+
+  /* KPI */
+  .kpis {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px; background: var(--ftv-border);
+    border: 1px solid var(--ftv-border); margin: 0 24px 24px;
+  }
+  .kpi { background: #fff; padding: 20px; position: relative; }
+  .kpi:hover { background: var(--ftv-gray); }
+  .kpi::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--ftv-blue), var(--ftv-green));
+  }
+  .kpi-label {
+    color: var(--ftv-muted); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 2px; font-weight: 700;
+  }
+  .kpi-value {
+    font-size: 38px; font-weight: 900; color: var(--ftv-dark);
+    margin-top: 6px; letter-spacing: -1.5px;
+  }
+
+  /* Conteneur */
+  .conteneur { max-width: 1600px; margin: 0 auto; padding: 0 24px 60px; }
+  .section-titre {
+    font-size: 14px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: 3px; color: var(--ftv-dark);
+    margin: 32px 0 12px; padding-bottom: 8px;
+    border-bottom: 3px solid var(--ftv-dark);
+    display: inline-block;
+  }
+
+  /* Grilles */
+  .grille {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 16px; margin-bottom: 16px;
+  }
+  .grille-3 {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px; margin-bottom: 16px;
+  }
+
+  /* Cartes */
+  .carte { background: #fff; border: 1px solid var(--ftv-border); }
+  .carte-titre {
+    padding: 12px 16px; font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 2px;
+    color: #fff;
+    background: linear-gradient(90deg, var(--ftv-dark), var(--ftv-blue));
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .carte-titre .badge {
+    background: var(--ftv-yellow); color: var(--ftv-dark);
+    padding: 2px 8px; font-size: 9px; font-weight: 900;
+    letter-spacing: 1px;
+  }
+  .carte-corps { padding: 16px; }
+
+  /* Tableaux */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td {
+    padding: 10px 12px; text-align: left;
+    border-bottom: 1px solid var(--ftv-border);
+  }
+  th {
+    color: #fff; font-weight: 800; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    background: var(--ftv-dark);
+  }
+  tr:hover { background: var(--ftv-gray); }
+  .rang {
+    display: inline-block; width: 24px; text-align: center;
+    font-weight: 900; margin-right: 8px;
+  }
+  .rang.top3 {
+    background: var(--ftv-yellow); color: var(--ftv-dark);
+    padding: 2px 0;
+  }
+  .pochette-cell {
+    width: 40px; height: 40px;
+    background: var(--ftv-gray); background-size: cover;
+    background-position: center;
+    border: 1px solid var(--ftv-border);
+    display: inline-block; vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  .vide {
+    color: var(--ftv-muted); font-style: italic; padding: 24px;
+    text-align: center; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 60px; padding: 32px 24px;
+    background: var(--ftv-dark); color: #999;
+    text-align: center; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 3px; font-weight: 700;
+  }
+  footer strong { color: var(--ftv-yellow); }
+
+  @media (max-width: 700px) {
+    .logo { font-size: 28px; }
+    .logo-sub { display: none; }
+    .header { padding: 20px 16px; }
+    .kpi-value { font-size: 28px; }
+    .on-air { flex-direction: column; text-align: center; }
+    .on-air .countdown { text-align: center; }
+    .grille { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="live">En direct</div>
+  <div class="actions">
+    <div class="meta" id="horodatage">—</div>
+    <button class="refresh-btn" id="refresh-btn" onclick="charger()">↻ Recharger</button>
+  </div>
+</div>
+
+<div class="header">
+  <div class="logo">LA 1<span>ÈRE</span></div>
+  <div class="logo-sub">Monitor Programmation · Outre-mer</div>
+</div>
+
+<div class="radios-tabs" id="radios-tabs"></div>
+
+<div id="etat">Initialisation...</div>
+
+<div class="on-air" id="on-air" style="display:none;">
+  <div class="cover" id="on-air-cover"></div>
+  <div class="info">
+    <div class="radio-badge" id="on-air-radio">—</div>
+    <div class="label" id="on-air-label">Morceau en cours</div>
+    <div class="titre" id="on-air-titre">—</div>
+    <div class="artiste" id="on-air-artiste">—</div>
+    <a class="extrait" id="on-air-extrait" href="#" target="_blank" style="display:none;">▶ Extraire 30s</a>
+  </div>
+  <div class="countdown">
+    <div class="countdown-label" id="countdown-label">Depuis diffusion</div>
+    <div class="countdown-value" id="countdown">--:--</div>
+  </div>
+</div>
+
+<div class="kpis" id="kpis"></div>
+
+<div class="conteneur">
+  <h2 class="section-titre">Classement</h2>
+  <div class="grille">
+    <div class="carte"><div class="carte-titre">Top artistes <span class="badge">TOP 15</span></div><div class="carte-corps"><div id="chart-artistes"></div></div></div>
+    <div class="carte"><div class="carte-titre">Top titres <span class="badge">TOP 15</span></div><div class="carte-corps"><div id="chart-titres"></div></div></div>
+  </div>
+
+  <h2 class="section-titre">Répartition</h2>
+  <div class="grille">
+    <div class="carte"><div class="carte-titre">Par heure</div><div class="carte-corps"><div id="chart-heures"></div></div></div>
+    <div class="carte"><div class="carte-titre">Par jour de la semaine</div><div class="carte-corps"><div id="chart-semaine"></div></div></div>
+  </div>
+
+  <div class="carte" style="margin-bottom:16px;">
+    <div class="carte-titre">Évolution journalière</div>
+    <div class="carte-corps"><div id="chart-jours"></div></div>
+  </div>
+
+  <h2 class="section-titre">Analyses</h2>
+  <div class="grille-3">
+    <div class="carte"><div class="carte-titre">Par année</div><div class="carte-corps"><div id="chart-annees"></div></div></div>
+    <div class="carte"><div class="carte-titre">Explicit vs Clean</div><div class="carte-corps"><div id="chart-explicit"></div></div></div>
+    <div class="carte"><div class="carte-titre">Top albums</div><div class="carte-corps"><div id="table-albums"></div></div></div>
+  </div>
+
+  <h2 class="section-titre">Détails</h2>
+  <div class="grille">
+    <div class="carte"><div class="carte-titre">Artistes récurrents</div><div class="carte-corps"><div id="table-recurrents"></div></div></div>
+    <div class="carte"><div class="carte-titre">Titres récurrents</div><div class="carte-corps"><div id="table-titres-rec"></div></div></div>
+  </div>
+
+  <div class="grille">
+    <div class="carte"><div class="carte-titre">Artistes diversifiés</div><div class="carte-corps"><div id="table-diversif"></div></div></div>
+    <div class="carte"><div class="carte-titre">Récap par radio</div><div class="carte-corps"><div id="table-par-radio"></div></div></div>
+  </div>
+
+  <h2 class="section-titre">Derniers morceaux</h2>
+  <div class="carte" style="margin-bottom:24px;">
+    <div class="carte-titre">Fil des diffusions</div>
+    <div class="carte-corps"><div id="table-derniers"></div></div>
+  </div>
+</div>
+
+<footer>
+  <strong>LA 1ÈRE MONITOR</strong> · Réseau Outre-mer · Enrichissement iTunes · v2.0
+</footer>
+
+<script>
+const SEUIL_VIEUX = 900;
+const AUTO_REFRESH = 120000;
+
+let DONNEES = {};
+let RADIO_ACTIVE = '__all__';
+let DERNIER_TS = 0;
+let DERNIER_DUREE = 0;
+let INTERVALLE_AUTO = null;
+
+async function charger() {
+  const btn = document.getElementById('refresh-btn');
+  if (btn) { btn.classList.add('spin'); setTimeout(() => btn.classList.remove('spin'), 600); }
+  const etat = document.getElementById('etat');
+  try {
+    const rep = await fetch('data.json?t=' + Date.now());
+    if (!rep.ok) throw new Error('HTTP ' + rep.status);
+    const data = await rep.json();
+    DONNEES = data;
+    etat.className = '';
+    etat.textContent = 'Données synchronisées';
+    document.getElementById('horodatage').textContent =
+      'Mise à jour : ' + new Date(data.genere_ts * 1000).toLocaleString('fr-FR');
+    construireOnglets(data);
+    afficherRadio(RADIO_ACTIVE);
+  } catch (e) {
+    etat.className = 'erreur';
+    etat.textContent = 'Erreur : ' + e.message;
+    console.error(e);
+  }
+}
+
+function construireOnglets(data) {
+  const conteneur = document.getElementById('radios-tabs');
+  const radios = data.par_radio || [];
+  const totalGlobal = data.global?.volume?.nb_diffusions || 0;
+  let html = '<button class="radio-tab' +
+    (RADIO_ACTIVE === '__all__' ? ' active' : '') +
+    '" onclick="selectionnerRadio(\'__all__\')">' +
+    'TOUTES<span class="nb">' + totalGlobal + '</span></button>';
+  for (const r of radios) {
+    const actif = RADIO_ACTIVE === r.radio ? ' active' : '';
+    html += '<button class="radio-tab' + actif + '" ' +
+      'onclick="selectionnerRadio(\'' + r.radio + '\')">' +
+      r.radio_nom + '<span class="nb">' + r.nb_diffusions + '</span></button>';
+  }
+  conteneur.innerHTML = html;
+}
+
+function selectionnerRadio(radio) {
+  RADIO_ACTIVE = radio;
+  construireOnglets(DONNEES);
+  afficherRadio(radio);
+}
+
+function afficherRadio(radio) {
+  const d = DONNEES;
+  if (!d) return;
+
+  // Récupérer les données : essayer d'abord le nouveau format, puis l'ancien
+  let bloc = null;
+  if (d.par_radio_data) {
+    if (radio === '__all__') bloc = d.global;
+    else bloc = d.par_radio_data[radio];
+  }
+  // Fallback : format plat (ancien)
+  if (!bloc) {
+    if (radio === '__all__') {
+      bloc = {
+        volume: d.volume || {},
+        top_artistes: d.top_artistes || [],
+        top_titres: d.top_titres || [],
+        heures: d.heures || [],
+        jours: d.jours || [],
+        semaine: d.semaine || [],
+        recurrents: d.recurrents || [],
+        titres_recurrents: d.titres_recurrents || [],
+        diversifies: d.diversifies || [],
+        annees: d.annees || [],
+        explicit: d.explicit || [],
+        albums: d.albums || [],
+        derniers_morceaux: d.derniers_morceaux || []
+      };
+    } else {
+      bloc = {
+        volume: d.volume || {},
+        top_artistes: d.top_artistes || [],
+        top_titres: d.top_titres || [],
+        heures: d.heures || [],
+        jours: d.jours || [],
+        semaine: d.semaine || [],
+        recurrents: d.recurrents || [],
+        titres_recurrents: d.titres_recurrents || [],
+        diversifies: d.diversifies || [],
+        annees: d.annees || [],
+        explicit: d.explicit || [],
+        albums: d.albums || [],
+        derniers_morceaux: d.derniers_morceaux || []
+      };
+    }
+  }
+
+  // KPI
+  const vol = bloc.volume || {};
+  const kpis = [
+    ['Diffusions', vol.nb_diffusions ?? 0],
+    ['Artistes', vol.nb_artistes ?? 0],
+    ['Titres', vol.nb_titres ?? 0],
+    ['Heures', (vol.heures ?? 0).toFixed(2)],
+    ['Durée moy.', (vol.duree_moy ?? 0).toFixed(0) + 's']
+  ];
+  document.getElementById('kpis').innerHTML = kpis.map(([l, v]) =>
+    '<div class="kpi"><div class="kpi-label">' + l + '</div>' +
+    '<div class="kpi-value">' + v + '</div></div>'
+  ).join('');
+
+  // On Air
+  chargerOnAir(radio);
+
+  // Layout Plotly
+  const layout = {
+    paper_bgcolor: '#fff', plot_bgcolor: '#fff',
+    font: { color: '#111', size: 11, family: 'Helvetica Neue, Arial' },
+    margin: { l: 150, r: 20, t: 10, b: 40 },
+    xaxis: { gridcolor: '#eee', zerolinecolor: '#ccc' },
+    yaxis: { gridcolor: '#eee', zerolinecolor: '#ccc' }
+  };
+  const opts = { displayModeBar: false, responsive: true };
+  const BLUE = '#003da5', BLACK = '#000', GREEN = '#00a86b', YELLOW = '#ffcc00';
+
+  if (bloc.top_artistes && bloc.top_artistes.length) {
+    const a = bloc.top_artistes.slice(0, 15);
+    Plotly.newPlot('chart-artistes', [{
+      type: 'bar', orientation: 'h',
+      x: a.map(r => r.minutes || r.nb_diffusions),
+      y: a.map(r => r.artistes),
+      marker: { color: BLUE },
+      hovertemplate: '<b>%{y}</b><br>%{x}<extra></extra>'
+    }], { ...layout, yaxis: { autorange: 'reversed' } }, opts);
+  } else document.getElementById('chart-artistes').innerHTML = '<div class="vide">Pas encore de données</div>';
+
+  if (bloc.top_titres && bloc.top_titres.length) {
+    const t = bloc.top_titres.slice(0, 15);
+    Plotly.newPlot('chart-titres', [{
+      type: 'bar', orientation: 'h',
+      x: t.map(r => r.nb_diffusions),
+      y: t.map(r => (r.artistes || '') + ' – ' + (r.titre || '')),
+      marker: { color: BLACK },
+      hovertemplate: '<b>%{y}</b><br>%{x} diffusions<extra></extra>'
+    }], { ...layout, yaxis: { autorange: 'reversed' } }, opts);
+  } else document.getElementById('chart-titres').innerHTML = '<div class="vide">Pas encore de données</div>';
+
+  if (bloc.heures && bloc.heures.length) {
+    Plotly.newPlot('chart-heures', [{
+      type: 'bar', x: bloc.heures.map(r => r.heure), y: bloc.heures.map(r => r.nb),
+      marker: { color: BLUE }
+    }], { ...layout, margin: { l: 40, r: 20, t: 10, b: 40 } }, opts);
+  } else document.getElementById('chart-heures').innerHTML = '<div class="vide">Pas encore de données</div>';
+
+  if (bloc.semaine && bloc.semaine.length) {
+    Plotly.newPlot('chart-semaine', [{
+      type: 'bar', x: bloc.semaine.map(r => r.jour), y: bloc.semaine.map(r => r.nb),
+      marker: { color: BLACK }
+    }], { ...layout, margin: { l: 40, r: 20, t: 10, b: 40 } }, opts);
+  } else document.getElementById('chart-semaine').innerHTML = '<div class="vide">Pas encore de données</div>';
+
+  if (bloc.jours && bloc.jours.length) {
+    Plotly.newPlot('chart-jours', [{
+      type: 'scatter', mode: 'lines+markers',
+      x: bloc.jours.map(r => r.date), y: bloc.jours.map(r => r.nb),
+      line: { color: BLUE, width: 3 },
+      marker: { size: 10, color: BLUE },
+      fill: 'tozeroy', fillcolor: 'rgba(0, 61, 165, 0.1)'
+    }], { ...layout, margin: { l: 40, r: 20, t: 10, b: 60 } }, opts);
+  } else document.getElementById('chart-jours').innerHTML = '<div class="vide">Pas encore de données</div>';
+
+  if (bloc.annees && bloc.annees.length) {
+    Plotly.newPlot('chart-annees', [{
+      type: 'bar', x: bloc.annees.map(r => r.annee), y: bloc.annees.map(r => r.nb_diffusions),
+      marker: { color: GREEN }
+    }], { ...layout, margin: { l: 40, r: 20, t: 10, b: 40 } }, opts);
+  } else document.getElementById('chart-annees').innerHTML = '<div class="vide">Pas encore de données</div>';
+
+  if (bloc.explicit && bloc.explicit.length) {
+    Plotly.newPlot('chart-explicit', [{
+      type: 'pie', labels: bloc.explicit.map(r => r.type_contenu),
+      values: bloc.explicit.map(r => r.nb), hole: 0.6,
+      marker: { colors: [YELLOW, GREEN, '#666'] },
+      textinfo: 'label+percent'
+    }], { ...layout, margin: { l: 20, r: 20, t: 10, b: 20 } }, opts);
+  } else document.getElementById('chart-explicit').innerHTML = '<div class="vide">Pas encore de données</div>';
+
+  rendreTable('table-albums', bloc.albums || [], [
+    { c: 'album', t: 'Album' }, { c: 'artistes', t: 'Artiste' }, { c: 'nb', t: 'Diff.' }
+  ]);
+  rendreTable('table-recurrents', bloc.recurrents || [], [
+    { c: 'artistes', t: 'Artiste' }, { c: 'nb_jours', t: 'Jours' }, { c: 'nb_diffusions', t: 'Diff.' }
+  ]);
+  rendreTable('table-titres-rec', bloc.titres_recurrents || [], [
+    { c: 'artistes', t: 'Artiste' }, { c: 'titre', t: 'Titre' }, { c: 'nb_jours', t: 'Jours' }
+  ]);
+  rendreTable('table-diversif', bloc.diversifies || [], [
+    { c: 'artistes', t: 'Artiste' }, { c: 'nb_titres', t: 'Titres' }, { c: 'nb', t: 'Diff.' }
+  ]);
+  rendreTable('table-par-radio', d.par_radio || [], [
+    { c: 'radio_nom', t: 'Radio' }, { c: 'nb_diffusions', t: 'Diff.' },
+    { c: 'nb_artistes', t: 'Art.' }, { c: 'nb_titres', t: 'Titres' }
+  ]);
+
+  const derniers = (bloc.derniers_morceaux || []).slice(0, 15);
+  if (derniers.length) {
+    let html = '<table><thead><tr>' +
+      '<th></th><th>Heure</th><th>Artiste</th><th>Titre</th><th>Album</th>' +
+      '</tr></thead><tbody>';
+    for (const m of derniers) {
+      const heure = m.heure != null ? String(m.heure).padStart(2, '0') + 'h' : '—';
+      const pochette = m.cover_deezer
+        ? '<span class="pochette-cell" style="background-image:url(\'' + m.cover_deezer + '\')"></span>'
+        : '<span class="pochette-cell"></span>';
+      html += '<tr>' +
+        '<td style="width:50px">' + pochette + '</td>' +
+        '<td>' + heure + '</td>' +
+        '<td>' + (m.artistes || '—') + '</td>' +
+        '<td>' + (m.titre || '—') + '</td>' +
+        '<td>' + (m.album || '—') + '</td>' +
+        '</tr>';
+    }
+    html += '</tbody></table>';
+    document.getElementById('table-derniers').innerHTML = html;
+  } else {
+    document.getElementById('table-derniers').innerHTML = '<div class="vide">Pas encore de données</div>';
+  }
+}
+
+function chargerOnAir(radio) {
+  const bloc = document.getElementById('on-air');
+  let r = null;
+  if (radio === '__all__') {
+    const tous = (DONNEES.global || {}).derniers_morceaux || [];
+    r = tous[0];
+    if (r) r.radio_nom = r.radio_nom || 'Toutes radios';
+  } else {
+    r = (DONNEES.derniers_par_radio || {})[radio];
+  }
+  if (!r || !r.titre) { bloc.style.display = 'none'; return; }
+
+  const maintenant = Math.floor(Date.now() / 1000);
+  const debut = Number(r.start_ts) || 0;
+  const age = maintenant - debut;
+  const vieux = age > SEUIL_VIEUX;
+
+  DERNIER_TS = debut;
+  DERNIER_DUREE = (Number(r.end_ts) || 0) - debut;
+
+  bloc.style.display = 'flex';
+  bloc.classList.toggle('stale', vieux);
+
+  document.getElementById('on-air-radio').textContent = r.radio_nom || '—';
+  document.getElementById('on-air-label').textContent =
+    vieux ? 'Dernier morceau connu' : 'Morceau en cours';
+  document.getElementById('countdown-label').textContent =
+    vieux ? 'Il y a' : 'Depuis diffusion';
+  document.getElementById('on-air-titre').textContent = r.titre || '—';
+  document.getElementById('on-air-artiste').textContent = r.artistes || '(artiste inconnu)';
+
+  const cover = document.getElementById('on-air-cover');
+  if (r.cover_deezer) cover.style.backgroundImage = "url('" + r.cover_deezer + "')";
+  else if (r.cover_uri) cover.style.backgroundImage = "url('" + r.cover_uri + "')";
+  else cover.style.backgroundImage = '';
+
+  const extrait = document.getElementById('on-air-extrait');
+  if (r.preview_mp3 && !vieux) {
+    extrait.href = r.preview_mp3;
+    extrait.style.display = 'inline-flex';
+  } else {
+    extrait.style.display = 'none';
+  }
+  majCompteur();
+}
+
+function majCompteur() {
+  const el = document.getElementById('countdown');
+  if (!el) return;
+  if (!DERNIER_TS) { el.textContent = '--:--'; return; }
+  const sec = Math.floor(Date.now() / 1000) - DERNIER_TS;
+  if (sec > SEUIL_VIEUX || (DERNIER_DUREE > 0 && sec >= DERNIER_DUREE)) {
+    el.textContent = '--:--';
+    return;
+  }
+  const m = String(Math.floor(sec / 60)).padStart(2, '0');
+  const s = String(sec % 60).padStart(2, '0');
+  el.textContent = m + ':' + s;
+}
+setInterval(majCompteur, 1000);
+
+function rendreTable(id, rows, cols) {
+  const cible = document.getElementById(id);
+  if (!rows || !rows.length) {
+    cible.innerHTML = '<div class="vide">Pas encore de données</div>';
+    return;
+  }
+  let html = '<table><thead><tr>';
+  for (const c of cols) html += '<th>' + c.t + '</th>';
+  html += '</tr></thead><tbody>';
+  rows.slice(0, 20).forEach((r, i) => {
+    html += '<tr>';
+    cols.forEach((c, j) => {
+      let v = r[c.c] ?? '';
+      if (j === 0 && typeof v === 'string' && cols.length > 1) {
+        const cls = i < 3 ? 'rang top3' : 'rang';
+        v = '<span class="' + cls + '">' + (i + 1) + '</span>' + v;
+      }
+      html += '<td>' + v + '</td>';
+    });
+    html += '</tr>';
+  });
+  cible.innerHTML = html + '</tbody></table>';
+}
+
+function demarrerAuto() {
+  if (INTERVALLE_AUTO) clearInterval(INTERVALLE_AUTO);
+  INTERVALLE_AUTO = setInterval(charger, AUTO_REFRESH);
+}
+
+charger();
+demarrerAuto();
+</script>
+
+</body>
+</html>
